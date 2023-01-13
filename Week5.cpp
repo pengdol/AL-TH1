@@ -66,4 +66,18 @@ int main(){
     }
   }
   printf("%d %d %d", x, y, max);
+}
+
+실기시험 1
+int main(){
+  int v[100001] = {0, };
+  int n = 0, count = 0;
+  scanf("%d", &n);
+  for(int i = 0; i < n; i++)
+    scanf("%d", &v[i]);
+  for(int i = 0; i < (n-1); i++){
+    if(v[i] > v[i + 1])
+      count += 1;
+  }
+  printf("%d", (count+1));
 }*/
