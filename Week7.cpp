@@ -55,5 +55,20 @@ int main(){
   }
   printf("%s", str);
   return 0;
-}*/
+}
 
+  4. 문자의 빈도
+
+int main(){
+  char str[1001];
+  int plus[26] = {0,};
+  scanf("%s", &str);
+  for(int i = 0; str[i]; i++){
+    if('a' <= str[i] && str[i] <= 'z')
+      str[i] = str[i] - 32;
+    plus[str[i] - 'A']++;
+  }
+  for(int i = 0; i < 26; i++)
+    printf("%d ", plus[i]);
+  return 0;
+}*/
