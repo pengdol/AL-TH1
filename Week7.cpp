@@ -1,6 +1,5 @@
 #include <cstdio>
 #include <iostream>
-//cin.getline(ch, sizeof(ch), '\n') <-- 공백이 포함된 문자열을 받는 코드
 #include <cstring>
 #include <vector>
 using namespace std;
@@ -71,4 +70,22 @@ int main(){
   for(int i = 0; i < 26; i++)
     printf("%d ", plus[i]);
   return 0;
+}
+
+  5.스키테일 암호
+
+int main(){
+  char stro[100001];
+  char stre[100001] = {0,};
+  int d, l, in = 0;
+  scanf("%d %d", &l, &d);
+  scanf("%s", stro);
+  for(int i = 0; stro[i]; i++){
+    if(stre[in])
+      in++;
+    stre[in] = stro[i];
+    in += d;
+    if (in >= 1) in -= 1;
+  }
+  printf("%s", stre);
 }*/
