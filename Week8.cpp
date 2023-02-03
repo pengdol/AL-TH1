@@ -98,4 +98,34 @@ int main(){
   return 0;
 }
 
-6. */
+6. 엄청 큰 수 비교하기
+
+int main(){
+  string a, b;
+  cin >> a;
+  cin >> b;
+  if (a > b) cout << a;
+  else cout << b;
+}
+
+7. 예술은 폭발이다!
+
+int main(){
+  string a;
+  cin >> a;
+  string b;
+  cin >> b;
+  int bs = b.size();
+  int in = 0;
+  while(1){
+    in = a.find(b);
+    if (in < 0)
+      break;
+    a = a.substr(0, in) + a.substr(in + bs, a.size() + (in + bs));
+  }
+  if(a.size() == 0)
+    printf("Art!");
+  else
+    cout << a;
+  return 0;
+}*/
