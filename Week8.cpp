@@ -1,5 +1,8 @@
 #include <iostream>
 #include <cstdio>
+#include <cstring>
+#include <string>
+using namespace std;
 
 /*
 1. 카이사르 암호
@@ -52,4 +55,47 @@ int main(){
     }
   }
   printf("No");
-}*/
+}
+
+4. 동물 울음소리 찾기
+
+int main(){
+  char C[101] = {0,};
+  char R[101] = {0,};
+  int n, c;
+  scanf("%s", C);
+  scanf("%d", &n);
+  for(int i = 0; i < n; i++){
+    scanf("%s", R);
+    if(strcmp(C, R) == 0){
+      c = 1;
+    }
+  }
+  if (c == 1) printf("Yes");
+  else printf("No");
+  return 0;
+}
+
+5. 회문의 개수 출력(회문)
+
+char str[100001];
+
+int ghlans(int st, int sn){
+  if(st > sn) return 0;
+  else if (str[st] == str[sn]) return ghlans(st + 1, sn - 1);
+  else return 1;
+}
+
+int main(){
+  int a;
+  int plus = 0;
+  scanf("%d", &a);
+  for(int i = 0; i < a; i++){
+    scanf("%s", str);
+    plus += ghlans(0, strlen(str) - 1);
+  }
+  printf("%d", a - plus);
+  return 0;
+}
+
+6. */
