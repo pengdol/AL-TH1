@@ -73,4 +73,46 @@ int main(){
   }
   return 0;
 }
+
+3.호칭 정리
+
+int main(){
+  string min, oth;
+  cin >> min;
+  cin >> oth;
+  for(int i = 0; i < 13; i++){
+    if('A' <= min[i] <= 'F')
+      min[i] = min[i] - 'A' + 10;
+    if('A' <= oth[i] <= 'F')
+      min[i] = oth[i] - 'A' + 10;
+  }
+  if(min < oth)
+    printf("kid");
+  if(oth < min)
+    printf("sir");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+s               s                ssssssssssssssss   s          ssssss      s
+s               s                s              s   s        ssssssssss    s
+s               s                s              s   s                      s
+s               ssss             s              s   ssss       ssssss      ssss
+s               s                s              s   s         ss    ss     s
+sssssssssssss   s                ssssssssssssssss   s         ss    ss     s
+                s                                   s          ssssss      s
+                                      ssssss               
+                                    ss      ss                  sssssssss
+                                    ss      ss                  s       s  
+                                      ssssss                    s       s
+                                                                sssssssss
 */
