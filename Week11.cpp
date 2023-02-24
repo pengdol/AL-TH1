@@ -2,6 +2,8 @@
 #include <string>
 #include <cstdio>
 #include <utility>
+#include <stack>
+#include <queue>
 using namespace std;
 
 /*
@@ -94,5 +96,107 @@ int main(){
     }
   }
   return 0;
+}
+
+3. stack과 queue
+
+int main(){
+  stack<int> s;
+  queue<int> q;
+  for(int i = 1; i <= 10; i++){
+    int t;
+    scanf("%d", &t);
+    s.push(t);
+    q.push(t);
+  }
+  while(!s.empty()){
+    printf("%d ", s.top());
+    s.pop();
+  }
+  printf("\n");
+  while(!q.empty()){
+    printf("%d ", q.front());
+    q.pop();
+  }
+}
+
+4. 화물 배송
+
+int main(){
+  int n;
+  cin >> n;
+  stack<int> s;
+  queue<string> q;
+  for(int i = 1; i <= n; i++){
+    int a;
+    string b;
+    scanf("%d", &a);
+    cin >> b;
+    s.push(a);
+    q.push(b);
+  }
+  while(!s.empty()){
+    printf("%d ", s.top());
+    s.pop();
+  }
+  printf("\n");
+  while(!q.empty()){
+    cout << q.front();
+    printf(" ");
+    q.pop();
+  }
+}
+
+5. 요세푸스 순열
+
+int main(){
+  int n, k;
+  cin >> n;
+  cin >> k;
+  queue<int> q;
+  for(int i = 1; i <= n; i++)
+    q.push(i);
+  while(!q.empty()){
+    for(int i = 0; i < k - 1; i++){
+      q.push(q.front());
+      q.pop();
+    }
+    cout << q.front() << " ";
+    q.pop();
+  }
+  return 0;
+}
+
+6. 괄호 검사기
+
+int main(){
+  char str[100000];
+  stack<char> s;
+  scanf("%s", str);
+  for(int i = 0; str[i]; i++){
+    if(str[i] == '(' || str[i] == '{' || str[i] == '[')
+      s.push(str[i]);
+    else{
+      if(s.empty())
+        printf("0");
+      else if(str[i] == ')' && s.top() != '('){
+        printf("0");
+        return 0;
+      }
+      else if(str[i] == '}' && s.top() != '{'){
+        printf("0");
+        return 0;
+      }
+      else if(str[i] == ']' && s.top() != '['){
+        printf("0");
+        return 0;
+      }
+      s.pop();
+    }
+  }
+  if(s.empty())
+    printf("1");
+  else
+    printf("0");
 }
 */
